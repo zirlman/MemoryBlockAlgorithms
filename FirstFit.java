@@ -44,9 +44,8 @@ public class FirstFit {
     }
 
     private static void loadBlocks(String[] blocks) {
-        int freeStorage;
+        int freeStorage = -1;
         for (String blockSize : blocks) {
-            freeStorage = Integer.MAX_VALUE;
             for (int i = 0; i < memory.size(); ++i) {
                 freeStorage = memory.get(i).getAvailable() - Integer.valueOf(blockSize);
                 if (freeStorage >= 0) {
